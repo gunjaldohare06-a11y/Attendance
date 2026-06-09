@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mark Attendance</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Mark Attendance</h2>
+
+<form method="POST">
+
+{% for student in students %}
+
+<p>{{ student[1] }} ({{ student[2] }})</p>
+
+<select name="{{ student[0] }}">
+
+<option value="Present">
+Present
+</option>
+
+<option value="Absent">
+Absent
+</option>
+
+</select>
+
+{% endfor %}
+
+<button class="btn">
+Save Attendance
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
